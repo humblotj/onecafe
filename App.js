@@ -1,21 +1,30 @@
+import React, { useState, useMemo } from 'react';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import AppNavigator from './navigators/AppNavigator';
+import FavouriteContext from './context/FavouriteContext';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const Theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: '#fff',
   },
-});
+};
+
+const App = () => {
+  const [favourite, setFavourite] = useState(null);
+  const value = useMemo(() => ({ favourite, setFavourite }), [favourite]);
+
+  return (
+    <FavouriteContext.Provider value={value}>
+      <StatusBar theme="light" />
+      <NavigationContainer theme={Theme}>
+        <AppNavigator />
+      </NavigationContainer>
+    </FavouriteContext.Provider>
+  );
+};
+
+export default App;
