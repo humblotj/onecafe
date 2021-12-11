@@ -5,6 +5,10 @@ import PropTypes from 'prop-types';
 import TouchableRipple from './TouchableRipple';
 import AppText from './AppText';
 
+/*
+SquareButton with different size (large or small)
+ */
+
 const SquareButton = ({ size, children, style, textStyle, ...rest }) => {
   return (
     <TouchableRipple
@@ -41,9 +45,12 @@ const styles = StyleSheet.create({
 });
 
 SquareButton.propTypes = {
-  size: PropTypes.string,
-  active: PropTypes.bool,
-  textStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  size: PropTypes.string /* size of your button: large or small */,
+  active: PropTypes.bool /* active or not, change the color */,
+  textStyle: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+  ]) /* custom styles of your text */,
 };
 SquareButton.defaultProps = {
   size: 'large',

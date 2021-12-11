@@ -1,5 +1,27 @@
 import { useReducer } from 'react';
 
+/* 
+This hook can directly be written inside MenuShowScreen component
+But to keep it more readable I wrote it outside it
+*/
+
+/* 
+Here I use a rare hook of react useReducer
+It is a hook to handle state of your component like useState but better if your state is big
+If you know redux it is similar to it
+
+In real environment useReducer is rarely used because you usually prefer to install a state management library like "redux"
+or for form state a form management library like "react redux form" or "Formik"
+
+Here I didn't want to add another library so you can't focus on studying only React library
+However the libraries cited above are really commonly used with React you can check them later... 
+*/
+
+/* 
+A reducer defined how your state is your going to change according to an action (=order) which was "dispatched" (=sent) by your component
+It return the new state of your component/app
+ */
+
 const reducer = (state, action) => {
   switch (action.type) {
     case 'sizeChanged':
@@ -54,12 +76,20 @@ const reducer = (state, action) => {
 };
 
 const useSelectExtras = ({ sizeSelected, milkSelected, toppings }) => {
+  /* 
+  useReducer return the state he manages and a "dispatch" method which allows to send an action (=order)
+  it takes as arguments a reducer defined above and the initial state of your component
+  */
   const [state, dispatch] = useReducer(reducer, {
     sizeSelected: sizeSelected || 'Small',
     milkSelected: milkSelected || null,
     toppings: toppings || { Sugar: 0, Cocoa: 0, Cinnamon: 0, Ice: 0 },
   });
 
+  /* 
+  Here I defined methods used by MenuShowScreen component
+  The methods dispatch (=sent) an action (=order) to the reducer so it modify the state of the component
+  */
   const onSizeSelected = (size) =>
     dispatch({ type: 'sizeChanged', payload: size });
 
@@ -87,6 +117,7 @@ const useSelectExtras = ({ sizeSelected, milkSelected, toppings }) => {
       payload: topping,
     });
 
+  /* here is what this custom hook return to the component */
   return {
     ...state,
     onSizeSelected,

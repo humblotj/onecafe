@@ -13,6 +13,7 @@ import AlertModal from '../../../../components/AlertModal';
 import { getTotalPrice, menuList } from '../../../../utils/utils';
 
 const useOnSave = (name, size, milk, toppings) => {
+  /* get the setFavourite from the provider of your parent */
   const { setFavourite } = useContext(FavouriteContext);
   const navigation = useNavigation();
   const [alertModalVisible, setAlertModalVisible] = useState(false);
@@ -22,8 +23,7 @@ const useOnSave = (name, size, milk, toppings) => {
     setAlertModalVisible(true);
   };
 
-  const onRequestClose = () =>
-    navigation.push('Customer', { screen: 'Favourite' });
+  const onRequestClose = () => navigation.push('Favourite');
 
   return { onSave, alertModalVisible, onRequestClose };
 };

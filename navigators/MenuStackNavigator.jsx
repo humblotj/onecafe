@@ -5,9 +5,15 @@ import MenuScreen from '../screens/Customer/menu/MenuScreen';
 import MenuShowScreen from '../screens/Customer/menu-show/MenuShowScreen';
 import ScreenHeader from '../components/ScreenHeader';
 
+/*
+This navigator is a nested navigator of CustomerBottomTabNavigator
+Think like it is menu/main and menu/coffee urls
+*/
+
 const Stack = createNativeStackNavigator();
 
 const MenuStackNavigator = () => {
+  /* Return the Header according to the name of the route */
   const getHeader = (route) => {
     switch (route.name) {
       case 'MenuMain':

@@ -10,6 +10,13 @@ import PropTypes from 'prop-types';
 import AppText from './AppText';
 import Button from './Button';
 
+/*
+React native modal
+is visible when visible = true
+call onRequestClose when the modal is closed
+This custom modal close when you click on the backdrop of the modal (=outside the modal)
+*/
+
 const AlertModal = ({ text, visible, onRequestClose }) => {
   return (
     <Modal

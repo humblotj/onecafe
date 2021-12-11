@@ -12,9 +12,18 @@ import HomeIcon from '../components/icons/HomeIcon';
 import StarIcon from '../components/icons/StarIcon';
 import MenuIcon from '../components/icons/MenuIcon';
 
+/*
+A navigator defines the routes of your app
+It is like defining url routes of a website
+A stack navigator is the simpliest navigator where you define the screen routes which share a common header or nothing in common
+A bottom tab navigator extends a stack navigator
+A bottom tab navigator is where you define the screen routes which share a common bottom tab menu
+*/
+
 const Tab = createBottomTabNavigator();
 
 const CustomerBottomTabNavigator = () => {
+  /* return the header according to the route name */
   const getHeader = (route) => {
     switch (route.name) {
       case 'Home':
@@ -71,6 +80,12 @@ const CustomerBottomTabNavigator = () => {
       <Tab.Screen
         name="Home"
         component={CustomerHomeScreen}
+        /*
+        In a mobile app, whenever you visit a screen, it doesn't dissapear, it just in the running in the background
+        Which is good if you want to go back to a previous a screen and keep for example the scroll position or the state of your screen
+        But it is really bad performance wise because your stacks keeps accumulating
+        You can disabled this behavior for a screen by setting unmountOnBlur=true
+        */
         options={{ unmountOnBlur: true }}
       />
       <Tab.Screen

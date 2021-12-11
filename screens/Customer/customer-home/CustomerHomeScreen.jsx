@@ -10,7 +10,10 @@ import FavouriteContext from '../../../context/FavouriteContext';
 import { getTotalPrice } from '../../../utils/utils';
 import AppText from '../../../components/AppText';
 
+/* Home Screen */
+
 const CustomerHomeScreen = () => {
+  /* If get the favourite of your parent provider by using useContext hook */
   const { favourite } = useContext(FavouriteContext);
   const navigation = useNavigation();
 
@@ -18,6 +21,7 @@ const CustomerHomeScreen = () => {
 
   const onOrder = () => setAlertModalVisible(true);
 
+  /* If no favourite the component return 'You don't have favourite yet' */
   if (!favourite) {
     return (
       <Container>
@@ -28,13 +32,17 @@ const CustomerHomeScreen = () => {
     );
   }
 
+  /* Pro tip: use ES6 object destructuration instead of favourite.name, favourite.size, etc...
+  Be caferul, object destructuration only work if object is not null...
+  Here this line is not executed if favourite is null... check above
+  */
   const { name, size, milk, toppings } = favourite;
 
+  /* How to navigate nested navigator 
+     It is like go to menu/menu-show in web
+  */
   const onEdit = () =>
-    navigation.push('Customer', {
-      screen: 'Menu',
-      params: { screen: 'MenuShow', params: favourite },
-    });
+    navigation.push('Menu', { screen: 'MenuShow', params: favourite });
 
   return (
     <Container>

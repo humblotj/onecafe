@@ -9,6 +9,13 @@ import { useNavigation } from '@react-navigation/core';
 import TouchableRipple from './TouchableRipple';
 import Logo from './icons/Logo';
 
+/*
+Header of your Customer Bottom Navigator
+Return your logo, the name of your screen and the back button
+In some screens, there is no back button
+Add a noBackButton property for that
+ */
+
 const ScreenHeader = ({ children, textColor, noBackButton }) => {
   const { goBack } = useNavigation();
 
@@ -19,6 +26,7 @@ const ScreenHeader = ({ children, textColor, noBackButton }) => {
         <Bold style={styles.appName}>OneCafe</Bold>
       </View>
       <View style={styles.localHeader}>
+        {/* AND operators, it means if noBackButton is true "execute" the left operand... which is "return back button"  */}
         {!noBackButton && (
           <TouchableRipple style={styles.backButton} onPress={goBack}>
             <BackIcon />
@@ -38,6 +46,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff',
+    /* 
+    With react native you can write different code for android and iOS.
+    It is sometimes necessary because android and iOS have different behavior
+    Just use Platform.OS === 'ios' or Platform.OS === 'android'
+    Here there is status bar for Android but not in iOS...
+    */
     marginTop: Platform.OS === 'ios' ? 0 : Constants.statusBarHeight,
     paddingVertical: 4,
   },

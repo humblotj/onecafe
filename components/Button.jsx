@@ -4,6 +4,10 @@ import Bold from './Bold';
 
 import TouchableRipple from './TouchableRipple';
 
+/* 
+Rectangle button which use the custom "Touchable" component
+*/
+
 const Button = ({ style, children, onPress }) => {
   return (
     <TouchableRipple onPress={onPress} style={[styles.container, style]}>

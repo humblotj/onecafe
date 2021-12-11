@@ -7,6 +7,10 @@ import Bold from '../../../../components/Bold';
 import SquareButton from '../../../../components/SquareButton';
 import MilkChip from './MilkChip';
 
+/* 
+Same toppings and milk for all products you can differentiate 
+by product by putting a different toppingsList and milkList in the menuList 
+*/
 export const toppingsList = {
   Sugar: { price: 0.1 },
   Cocoa: { price: 0.2 },
@@ -16,10 +20,12 @@ export const toppingsList = {
 
 const milksList = ['Farm', 'Cocunut', 'Almond', 'Gluten Free'];
 
+/* Component return the title */
 const ExtraTitle = ({ children }) => (
   <Bold style={styles.extraTitle}>{children}</Bold>
 );
 
+/* Component return minus or plus button */
 const MinusPlusButton = ({ children, active, onPress }) => (
   <SquareButton
     size="small"
@@ -39,6 +45,7 @@ MinusPlusButton.propTypes = {
   onPress: PropTypes.func.isRequired,
 };
 
+/* Main component of this file */
 const SelectExtras = ({
   milkSelected,
   onMilkChange,
@@ -72,6 +79,11 @@ const SelectExtras = ({
     <View style={styles.container}>
       <View>
         <ExtraTitle>Topping</ExtraTitle>
+        {/* 
+        equivalent to a loop through the toppingList keys 
+        for each key of toppingsList (here a key is the name of toppings)
+        return the topping component according to the price of the topping
+        */}
         {Object.entries(toppingsList).map(([name, { price }]) =>
           getTopping({ name, price }, toppings[name]),
         )}

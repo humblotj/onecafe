@@ -5,6 +5,11 @@ import PropTypes from 'prop-types';
 import AppText from '../../../../components/AppText';
 import TouchableRipple from '../../../../components/TouchableRipple';
 
+/* 
+Milk touchable component
+Change color on active or not
+*/
+
 const MilkChip = ({ children, style, active, onPress }) => {
   return (
     <TouchableRipple

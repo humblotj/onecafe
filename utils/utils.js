@@ -1,5 +1,11 @@
 import { toppingsList } from '../screens/Customer/menu-show/components/SelectExtras';
 
+/* utils methods/variables to use in differents components */
+
+/* 
+the menu of your app
+in a real environment you should get your menu from your backend via API call
+*/
 export const menuList = {
   Latte: {
     picture: require('../assets/latte.png'),
@@ -34,6 +40,8 @@ export const menuList = {
     },
   },
 };
+
+/* method to calculate the total price */
 
 export const getTotalPrice = ({ name, size, milk, toppings }) => {
   let totalPrice = menuList[name].sizes[size].price;

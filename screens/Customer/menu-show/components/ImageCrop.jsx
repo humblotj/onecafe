@@ -2,6 +2,10 @@ import React from 'react';
 import { View, StyleSheet, Image } from 'react-native';
 import PropTypes from 'prop-types';
 
+/* 
+Crop the menu picture component
+*/
+
 const ImageCrop = ({ style, source }) => {
   return (
     <View style={[styles.imageContainer, style]}>

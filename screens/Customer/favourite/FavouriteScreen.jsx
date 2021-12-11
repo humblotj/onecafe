@@ -17,6 +17,7 @@ const FavouriteScreen = () => {
 
   const onOrder = () => setAlertModalVisible(true);
 
+  /* If no favourite the component return 'You don't have favourite yet' */
   if (!favourite) {
     return (
       <Container>
@@ -28,6 +29,16 @@ const FavouriteScreen = () => {
   }
 
   const { milk, size, name, toppings } = favourite;
+
+  /* 
+  Function that return the milk line of this screen
+
+  Pro tip: You don't want your components to return to many lines or have to many depths (indentations)...
+  Keep your components small to make them readable
+  Here I separate the component I group into multiple functions block
+  Each function has one and only one purpose
+  That is one of the core concept of functional programming and why people like it because it is readable if you follow the guideline
+  */
 
   const getMilk = () => {
     if (milk) {

@@ -5,6 +5,11 @@ import PropTypes from 'prop-types';
 import SquareButton from '../../../../components/SquareButton';
 import Bold from '../../../../components/Bold';
 
+/* 
+Size button component reusable
+Change color on active or not
+*/
+
 const SizeButton = ({ children, style, onPress, active, price }) => {
   return (
     <View>

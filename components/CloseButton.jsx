@@ -4,6 +4,10 @@ import { StyleSheet } from 'react-native';
 import CloseIcon from './icons/CloseIcon';
 import TouchableRipple from './TouchableRipple';
 
+/* 
+Red delete button with white cross
+*/
+
 const CloseButton = ({ onPress, style }) => {
   return (
     <TouchableRipple style={[styles.closeButton, style]} onPress={onPress}>

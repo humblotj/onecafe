@@ -6,6 +6,11 @@ import PropTypes from 'prop-types';
 import TouchableRipple from '../../../../components/TouchableRipple';
 import AppText from '../../../../components/AppText';
 
+/* 
+Return a menu item
+Navigate to menu show on item pressed
+*/
+
 const MenuItem = ({ name, picture }) => {
   const navigation = useNavigation();
 
