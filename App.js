@@ -2,8 +2,8 @@ import React, { useState, useMemo } from 'react';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 
-import AppNavigator from './navigators/AppNavigator';
 import FavouriteContext from './context/FavouriteContext';
+import CustomerBottomTabNavigator from './navigators/CustomerBottomTabNavigator';
 
 const Theme = {
   ...DefaultTheme,
@@ -21,7 +21,7 @@ const App = () => {
     <FavouriteContext.Provider value={value}>
       <StatusBar theme="light" />
       <NavigationContainer theme={Theme}>
-        <AppNavigator />
+        <CustomerBottomTabNavigator />
       </NavigationContainer>
     </FavouriteContext.Provider>
   );
