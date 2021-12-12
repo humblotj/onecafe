@@ -2,6 +2,7 @@
 
 Cafe menu favourite app
 Demo project for studying purpose
+Documention of the project inside docs/how to use.txt
 
 Getting Started
 
