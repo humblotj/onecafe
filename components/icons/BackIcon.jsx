@@ -2,16 +2,16 @@ import * as React from 'react';
 import Svg, { Path } from 'react-native-svg';
 
 /* 
-How to use svg in Expo project:
-- Add react-native-svg to your project
-- Find a svg picture or convert a picture to svg (there is some websites for this)
-- Convert the svg file in to react component via this website: https://react-svgr.com/playground/?native=true
+엑스포 프로젝트에서 SVG 이미지를 사용하는 방법:
+- 프로젝트에 리엑트-네이티브-SVG를 추가합니다.
+- SVG 사진을 찾거나 사진을 SVG로 변환합니다(변환을 위한 웹 사이트가 존재합니다.)
+- 다음 웹 사이트를 통해 SVG 파일을 응답 구성 요소로 변환합니다. https://react-svgr.com/playground/?sbg=true
 
-Why use svg picture?
-- svg picture is vector based picture unlike png, jpg pictures which are pixel based...
-- what ever you set the dimensions to the picture, you won't see any pixel and this without change the size of your file...
-- however it is not possible to have complex svg pictures
-- svg are ideal for logo/icon pictures...
+SVG 사진을 사용하는 이유
+- SVG 사진은 픽셀 기반의 png, jpg 사진과 달리 벡터 기반의 사진입니다...
+- 사진의 크기를 어떻게 설정하든 파일 크기를 변경하지 않으면 픽셀 단위로 깨지지 않습니다.
+- 그러나 복잡한 구조의 SVG 사진을 사용하기는 어렵습니다.
+- 따라서 SVG는 로고/아이콘 사진에 이상적입니다.
 */
 
 const BackIcon = (props) => (

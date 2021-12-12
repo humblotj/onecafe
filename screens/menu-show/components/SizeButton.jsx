@@ -6,8 +6,8 @@ import SquareButton from '../../../components/SquareButton';
 import Bold from '../../../components/Bold';
 
 /* 
-Size button component reusable
-Change color on active or not
+단추크기의 구성 요소가 재사용 가능합니다.
+활성 상태에서 색상이 변경됩니다.
 */
 
 const SizeButton = ({ children, style, onPress, active, price }) => {

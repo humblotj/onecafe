@@ -5,7 +5,7 @@ import CloseIcon from './icons/CloseIcon';
 import TouchableRipple from './TouchableRipple';
 
 /* 
-Red delete button with white cross
+흰색 십자 표시가 있는 빨간색 삭제 버튼입니다.
 */
 
 const CloseButton = ({ onPress, style }) => {

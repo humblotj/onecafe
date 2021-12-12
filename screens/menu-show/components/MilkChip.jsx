@@ -6,8 +6,8 @@ import AppText from '../../../components/AppText';
 import TouchableRipple from '../../../components/TouchableRipple';
 
 /* 
-Milk touchable component
-Change color on active or not
+milk 항목에서가 누를 수 있는 구성 요소
+활성 상태에서 색상 변경 여부
 */
 
 const MilkChip = ({ children, style, active, onPress }) => {

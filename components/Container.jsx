@@ -3,19 +3,19 @@ import { ImageBackground, ScrollView, StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 
 /*
-Component for a fixed background
+고정된 배경을 위한 구성요소입니다.
 */
 
 const Container = ({ style, contentContainerStyle, children, noScroll }) => {
   /* 
-  If you want your screen scrollable or not
-  Be careful nested scroll component
+  만약 화면을 스크롤 할 수 있을지 아닐지 여부를 정하고 싶으시다면
+  중첩된 스크롤 구성요소를 주의하세요.
   */
   const ContentContainer = noScroll ? View : ScrollView;
 
   /* 
-  If you want your screen is scrollable, your component is a ScrollView you need to pass contentContainerStyle to modify the style
-  If you want your screen is not scrollable, your component is View you need to pass style to modify the style
+  화면을 스크롤할 수 있게 하려면 구성 요소가 ScrollView인 경우 ContentContainerStyle을 전달하여 스타일을 수정해야 합니다.
+  화면을 스크롤할 수 없는 경우 구성 요소가 View이므로 스타일을 전달한 후 수정해야 합니다.
   */
   const getContentContainerProps = () => {
     if (noScroll) {
@@ -33,13 +33,13 @@ const Container = ({ style, contentContainerStyle, children, noScroll }) => {
 
   return (
     <View style={[styles.container, style]}>
-      {/* Fixed background */}
+      {/* 고정된 배경 */}
       <ImageBackground
         source={require('../assets/background.png')}
         resizeMode="cover"
         style={styles.image}
       />
-      {/* Content of your screen scrollable or not */}
+      {/* 화면 콘텐츠 스크롤 가능 여부*/}
       <ContentContainer {...getContentContainerProps()}>
         {children}
       </ContentContainer>

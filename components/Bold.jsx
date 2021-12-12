@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import AppText from './AppText';
 
 /*
-Component for bold text base on AppText component for the default text styles...
+AppText 구성 요소의 굵은 텍스트 기반 구성 요소를 정의합니다.
  */
 
 const Bold = ({ children, style, ...rest }) => {

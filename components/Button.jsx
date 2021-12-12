@@ -5,7 +5,7 @@ import Bold from './Bold';
 import TouchableRipple from './TouchableRipple';
 
 /* 
-Rectangle button which use the custom "Touchable" component
+사용자 정의 "터치 가능" 구성요소를 사용하는 직사각형 버튼입니다.
 */
 
 const Button = ({ style, children, onPress }) => {

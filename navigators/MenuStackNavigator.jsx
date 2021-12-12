@@ -6,14 +6,14 @@ import MenuShowScreen from '../screens/menu-show/MenuShowScreen';
 import ScreenHeader from '../components/ScreenHeader';
 
 /*
-This navigator is a nested navigator of CustomerBottomTabNavigator
-Think like it is menu/main and menu/coffee urls
+이 탐색기는 CustomerBottomTabNavigator의 중첩된 탐색기입니다.
+ menu/main 과 menu/coffee 를 떠올리시면 됩니다.
 */
 
 const Stack = createNativeStackNavigator();
 
 const MenuStackNavigator = () => {
-  /* Return the Header according to the name of the route */
+  /* 경로 이름에 따라 헤더값을 반환합니다. */
   const getHeader = (route) => {
     switch (route.name) {
       case 'MenuMain':

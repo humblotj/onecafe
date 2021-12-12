@@ -3,7 +3,7 @@ import { View, StyleSheet, Image } from 'react-native';
 import PropTypes from 'prop-types';
 
 /* 
-Crop the menu picture component
+메뉴 그림의 구성 요소 자르기
 */
 
 const ImageCrop = ({ style, source }) => {

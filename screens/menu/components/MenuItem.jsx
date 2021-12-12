@@ -7,14 +7,14 @@ import TouchableRipple from '../../../components/TouchableRipple';
 import AppText from '../../../components/AppText';
 
 /* 
-Return a menu item
-Navigate to menu show on item pressed
+메뉴 항목 귀환
+눌려진 항목의 메뉴 표시로 이동합니다.
 */
 
 const MenuItem = ({ name, picture }) => {
   const navigation = useNavigation();
 
-  /* go to menushow, pass the name of the item as params */
+  /* MenuShow에 가서 상품명을 params으로 전달합니다. */
   const navigateToItem = () => navigation.push('MenuShow', { name });
 
   return (

@@ -1,10 +1,10 @@
 import { toppingsList } from '../screens/menu-show/components/SelectExtras';
 
-/* utils methods/variables to use in differents components */
+/* 구성 요소에 사용할 메서드 및 변수*/
 
 /* 
-the menu of your app
-in a real environment you should get your menu from your backend via API call
+당신의 앱의 메뉴
+실제 환경에서는 API 호출을 통해 백엔드에서 메뉴를 가져와야 합니다
 */
 export const menuList = {
   Latte: {
@@ -41,7 +41,7 @@ export const menuList = {
   },
 };
 
-/* method to calculate the total price */
+/*  총 비용을 계산하는 메소드 */
 
 export const getTotalPrice = ({ name, size, milk, toppings }) => {
   let totalPrice = menuList[name].sizes[size].price;

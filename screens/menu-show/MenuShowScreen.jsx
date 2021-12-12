@@ -11,24 +11,25 @@ import SizeButton from './components/SizeButton';
 import useSelectExtras from './hooks/useSelectExtras';
 
 /*
-Menu details screen
+메뉴 세부 정보 화면
 */
 
 const MenuShowScreen = ({ route }) => {
-  /* get the name of the product your passed, via the params navigator
-  think of menu/latte   -  menu/matcha  for web urls
+  /* arams 네비게이터를 통해 통과된 제품의 이름을 가져옵니다.
+  menu/latte   -  menu/matcha - 웹 URL에 대한 메뉴/매치를 생각합니다.
   */
   const { name } = route.params || {};
-  /* get the sizes price and picture of the product by checking the menuList with the name of the product */
+  /* 제품 이름과 함께 메뉴리스트를 확인하여 제품의 크기와 사진을 가져옵니다. */
   const { sizes, picture } = menuList[name] || {};
 
-  /* To make this component more readable, I define the methods used by this component outside of this component 
-  So in this file you can just focus in understanding what view this component render
+  /* 
+  이 구성 요소의 가독성을 높이기 위해 이 구성 요소 외부에서 이 구성 요소가 사용하는 방법을 정의합니다.
+  따라서 이 파일에서는 이 구성요소가 렌더링하는 뷰를 이해하는 데 집중할 수 있습니다.
 
-  Pro tip: Usually you don't want to write long methods inside a component
-  Ideally inside your component you just want to see the view of your app (=html/css for web)
-  The methods can be written inside a custom hooks you grouped by purpose
-  Keep in mind functionnal component -> one function / one purpose
+  짧은 팁: 일반적으로 구성 요소 내부에 긴 메서드를 작성하지 않습니다.
+  구성 요소 내에서 앱의 화면(웹의 경우 =html/css)만을 보는 것이 바람직합니다.
+  메소드는 목적별로 그룹화한 사용자 지정 훅 안에 작성할 수 있습니다.
+  [함수의 구성요소 -> 하나의 기능/하나의 목적] 임을 염두에 두십시오.
   */
   const {
     sizeSelected,
@@ -40,8 +41,8 @@ const MenuShowScreen = ({ route }) => {
     onToppingDecrease,
     onToppingDelete,
   } = useSelectExtras({
-    /* get the edit params from your route params
-    if no params no selection at the beginning
+    /* 경로 매개 변수에서 편집 매개 변수를 가져옵니다.
+    매개 변수가 없는 경우 처음에 선택하지 않습니다.
      */
     sizeSelected: route.params?.size,
     milkSelected: route.params?.milk,

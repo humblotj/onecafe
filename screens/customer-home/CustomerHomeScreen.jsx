@@ -9,17 +9,18 @@ import FavouriteContext from '../../context/FavouriteContext';
 import { getTotalPrice } from '../../utils/utils';
 import AppText from '../../components/AppText';
 
-/* Home Screen */
+/* Home 화면 */
 
 const CustomerHomeScreen = ({ navigation }) => {
-  /* Get the favourite of your parent provider by using useContext hook */
+  /* useContext 훅을 사용하여 부모 공급자의 Favourite을 얻습니다. */
   const { favourite } = useContext(FavouriteContext);
 
   const [alertModalVisible, setAlertModalVisible] = useState(false);
 
   const onOrder = () => setAlertModalVisible(true);
 
-  /* If no favourite, the component return 'You don't have favourite yet' */
+  /* favourite이 없으면 구성 요소가 'You don't have favourite yet'를 반환합니다. */
+  
   if (!favourite) {
     return (
       <Container>
@@ -30,14 +31,15 @@ const CustomerHomeScreen = ({ navigation }) => {
     );
   }
 
-  /* Pro tip: use ES6 object destructuration instead of favourite.name, favourite.size, etc...
-  Be caferul, object destructuration only work if object is not null...
-  Here this line is not executed if favourite is null... check above
+  /* 
+  짧은 팁 :  favourite.name, favorite.size 대신 ES6 객체 소멸을 사용합니다.
+            객체 소멸은 객체가 null이 아닌 경우에만 작동하니 조심하세요.
+            여기서 Favourite 값이 null이면 이 줄이 실행되지 않습니다... 윗줄에서 확인하세요.
   */
   const { name, size, milk, toppings } = favourite;
 
-  /* How to navigate nested navigator 
-     It is like go to menu/menu-show in web
+  /* 중첩된 네비게이터 탐색 방법은
+      웹에서 menu/menu-show에 가는 것과 같습니다.
   */
   const onEdit = () =>
     navigation.jumpTo('Menu', { screen: 'MenuShow', params: favourite });

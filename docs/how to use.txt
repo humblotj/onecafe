@@ -1,67 +1,69 @@
-This project is based on Expo React native
 
-There will be some Pro tip in the project... You can read them but if you don't understand it is fine... 
-Pro tip are not necessary for starting coding and make your app working, it will just make you code better
-You can try to understand them a few months (or year) later..
+이 프로젝트는 엑스포 리액트 네이티브를 기반으로 합니다.
+코드 사이에 몇 가지 짧은 팁들을 주석으로 넣어 두었습니다.
+이 팁들은 코딩을 시작하고 앱을 작동시키는 데 필요한 것이 아니라 코드가 더 원활히 작동될 수 있도록 도와 줄 뿐이므로
+장기적으로 공부하신다면 언젠가 이해하실 수 있을 것입니다.
 
-# ES6 reminders
 
-React native is based on javascript
-I use a lot of javascript es6 operators (latest javascript syntax) in this project to write complex code with just a few lines
+# ES6 리마인더
 
-You need to know:
+리액트 네이티브는 javascript를 기반으로 합니다.
+이 프로젝트에서 몇 줄의 복잡한 코드를 작성하기 위해 많은 javascript es6 연산자(최신 javascript 구문)를 사용합니다.
 
-map array operator -->  transform an array to another array
 
-ternary operator --- eg: bool ? valA : valB  equivalent to if(bool) {valA} else {valB}
+# 알아야 할 사항:
 
-&& operator --- eg: a && b   equivalent to if(a) {do b}
+map array operator(맵 배열 연산자)--> 배열을 다른 배열로 변환
 
-spread operator -->  {...obj}  equivalent to everything inside obj
+ternary operator(삼항 연산자) --- 에시 : bool ? valA : valB, if(bool) {valA} else {valB}와 동일합니다.
+
+&& 연산자 --- 예시 : a && b , if(a) {do b} 와 동일합니다.
+
+obj 내의 모든 연산자와 동일한 스프레드 연산자 --> {...obj}
+
 
 # React
-React native is based on React
-It is helps to know React web before learning React Native
-
-Core concept of React 
-Functionnal component vs Class component
-Class component is the old preferred way to code react, you need to learn it if you want to work on old project
-Functionnal component is the new preferred way to code react, you need to learn it if you want to work on new project
-Why functionnal component is preferred over class component??
-Because it is there is easier to understand functionnal component if you wrote the correctly!
-Core concept of functionnal programming "1 FUNCTION 1 PURPOSE" so "1 COMPONENT 1 PURPOSE"
-In that way each function is independant to each others, no side effects or a few so easier to test also
-
-# Virtual DOM
-Ideally, you need to understand how react render you app... 
-Actually react rebuild constantly your app (whenever your state change or an event you are listenning like click or typping happened)... 
-But it is done fast thanks to the Virtual DOM...
-If your understand the Virtual DOM, you understand that all your component are keep re-creating themself and all previous value are lost except the state of your component you saved
-PRO TIP: check memoization concept
+리액트 네이티브는 리액트를 기반으로 합니다.
+리액트 네이티브를 배우기 전에 리액트 웹을 알아두는 것이 도움이 됩니다.
 
 
-# React native vs React
-Mobile react native developement is like react web developement but with limited options compare to web
-In web, you use html/css but in react native you use native component and stylesheet which are similar to html/css syntax but are more limited
-For example: in React native there is only 2 main tags "View" for container which are flexblox and "Text" which are inline for your text
-In React native there is less styles rules, no hover, no after, only flexbox, no aria, etc...
+# 리엑트의 핵심 개념
 
-# Expo vs Bare React Native
-Expo is built on top of React Native to make things easier (it is easier to add dependencies and deployment for example)
-But expo is more limited than Bare React Native so not used in big project
+- 함수 구성 요소 VS 클래스 구성 요소
+클래스 구성요소는 리엑트를 코드화하는 오래된 기본 방식입니다.구버전 프로젝트에서 작업하려면 클래스 구성요소를 학습해야 합니다.
+함수 구성 요소는 리엑트를 코드화 하는데 선호되는 최신 양식입니다. 최신 프로젝트에서 작업하려면 이 방법을 익혀야 합니다.
 
-# How to understand this project
-App.js is the index file of this project it return the customer bottom tab navigator
-All navigators of the app is inside the navigators folders
-A navigator is used to define the route of your app
+Q.왜 함수 구성 요소가 클래스 구성 요소보다 선호되나요?
 
-Common UI components are inside components folder
+A. 왜냐하면 당신이 정확하게 적으면 함수 구성 요소를 이해하기 쉬우니까요!
+함수형 프로그래밍의 핵심 개념은 "1 함수당 1 목적"이므로 
+"1 구성 요소 1 목적" 방식으로 각 기능이 서로 독립적으로 작동하며 부작용도 적고 테스트하기 쉬운 몇 가지 기능도 있습니다.
 
-Your assets are inside assets folder
+- 먼저 리엑트가 어떻게 앱을 렌더링하는지 이해해야 합니다.
+실제로 사용자의 상태가 변경되거나, 클릭이나 타이핑과 같은 이벤트가 발생할 때마다, 리엑트는 앱을 지속적으로 재구축합니다.
+하지만 버추얼 DOM 덕분에 이는 신속하게 처리될 수 있습니다.
+가상 DOM에 대해 살펴보면 모든 구성 요소가 계속 재생성되고 저장된 구성 요소의 상태를 제외한 모든 이전 값이 손실됩니다.
+PRO TIP: 메모리 개념을 학습해보세요.
+
+# 리엑트 네이티브 vs 리엑트
+모바일 리액트 네이티브 개발은 리액트 웹 개발과 유사하지만 웹에 비해 개발 한도가 제한적입니다.
+웹에서는 html/css를 사용하지만, 리엑트 네이티브에서는 html/css 구문과 유사하지만 더 제한적인 네이티브 구성요소 및 스타일시트를 사용합니다.
+예를 들어, 리엑트 네이티브에는  "container"에 대한 "flexblox"와 텍스트에 인라인으로 연결된 두 개의 기본 태그 "View"만 있습니다.
+리엑트 네이티브에는 비교적 적은 수의 스타일 규칙만 있습니다.(예를 들어 hover, after, aria 등은 없습니다.)
 
 
-Each screens of your app has one folder inside the screens folder
-Some big screen folder has their own component folder
+# 엑스포 vs 베어
+엑스포는 반응형 네이티브를 기반으로 구축되어 작업을 쉽게 수행할 수 있습니다(예: 종속성 및 배포 추가가 쉬움)
+하지만 엑스포는 베어 리액트 네이티브보다 여러 기능이 제한되어 있어서 대형 프로젝트에서는 사용하지 않습니다.
 
 
-Try to understand easy screen and the components folder first
+# 이 프로젝트를 이해하는 방법
+App.js는 이 프로젝트의 index 파일이며  the customer bottom tab navigator를 반환합니다.
+앱의 모든 네비게이터가 네비게이터 폴더 안에 있습니다.
+네비게이터는 앱의 경로를 정의하는 데 사용됩니다.
+공통 UI 구성 요소는 구성 요소 폴더 안에 있으며 asset은 asset폴더 안에 있습니다.
+
+
+앱의 각 화면에는 screens 폴더 당 하나의 폴더가 있습니다.
+일부 큰 스크린의 폴더에는 자체로 구성된 폴더가 더 있습니다.
+쉬운 내용의 폴더를 먼저 이해하십시오.

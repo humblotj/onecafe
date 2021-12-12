@@ -11,10 +11,9 @@ import AppText from './AppText';
 import Button from './Button';
 
 /*
-React native modal
-is visible when visible = true
-call onRequestClose when the modal is closed
-This custom modal close when you click on the backdrop of the modal (=outside the modal)
+리엑트 네이티브 모달은 'visible = true' 일때 보일 수 있게 나타납니다.
+모달이 닫힐 때 onRequestClose를 호출합니다`.
+이 커스텀 모달은 모달의 바깥쪽 외부 배경을 클릭하면 닫힙니다.
 */
 
 const AlertModal = ({ text, visible, onRequestClose }) => {

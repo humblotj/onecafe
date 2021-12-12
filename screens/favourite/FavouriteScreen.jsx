@@ -11,14 +11,14 @@ import { toppingsList } from '../menu-show/components/SelectExtras';
 import { getTotalPrice, menuList } from '../../utils/utils';
 
 const FavouriteScreen = () => {
-  /* Get the favourite of your parent provider by using useContext hook */
+  /* useContext 훅을 사용하여 부모 공급자의 Favourite을 얻습니다. */
   const { favourite } = useContext(FavouriteContext);
 
   const [alertModalVisible, setAlertModalVisible] = useState(false);
 
   const onOrder = () => setAlertModalVisible(true);
 
-  /* If no favourite, the component return 'You don't have favourite yet' */
+  /* 즐겨찾기가 없으면 구성 요소가 'You don't have favourite yet'을 반환합니다. */
   if (!favourite) {
     return (
       <Container>
@@ -32,15 +32,13 @@ const FavouriteScreen = () => {
   const { milk, size, name, toppings } = favourite;
 
   /* 
-  Function that return the milk line of this screen
+  화면 상의 'milk' 라인을 반환하는 함수
 
-  Pro tip: You don't want your components to return too many lines or have too many depths (indentations)...
-  Keep your components small to make them readable
-  Here I separate the component into multiple block function
-  Each function has one and only one purpose
-  That is one of the core concept of functional programming and why people like it because it is readable if you follow the guideline
+  짧은 팁: 구성 요소에 너무 많은 선이나 표시를 반환하지 말아주세요.
+  쉽게 읽을 수 있도록 구성 요소를 작게 유지해주세요.
+  여기서 구성 요소를 여러 블록 함수로 구분하며 각 함수에는 목적이 하나뿐입니다.
+  그것이 함수형 프로그래밍의 핵심 개념 중 하나이며 가이드라인을 따르면 쉽게 읽을 수 있기 때문에 선호됩니다.
   */
-
   const getMilk = () => {
     if (milk) {
       return (

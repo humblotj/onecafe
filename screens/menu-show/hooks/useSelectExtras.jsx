@@ -1,25 +1,24 @@
 import { useReducer } from 'react';
 
 /* 
-This hook can directly be written inside MenuShowScreen component
-But to keep it more readable I wrote it outside it
+이 hook는 MenuShowScreen 구성 요소 내부에 직접 작성할 수 있습니다.
+좀 더 읽기 쉽게 하려고 바깥에 썼어요.
 */
 
 /* 
-Here I use a rare hook of react useReducer
-It is a hook to handle state of your component like useState but better if your state is big
-If you know redux it is similar to it
+여기선 희귀한 react useReducer hook을 사용합니다. 
+useState와 같이 구성 요소의 상태를 다루는 훅으로 만약 redux를 안다면 그것과 비슷합니다.
 
-In real environment useReducer is rarely used because you usually prefer to install a state management library like "redux"
-or for form state a form management library like "react redux form" or "Formik"
+실제 환경에서는 redux와 같은 상태 관리 라이브러리를 설치하거나 또는 폼 상태의 경우 "react redux form" 또는 "Formik"과 같은 폼 관리 라이브러리를
+선호하기 때문에 useReducer가 거의 사용되지 않습니다.
 
-Here I didn't want to add another library so you can't focus on studying only React library
-However the libraries cited above are really commonly used with React you can check them later... 
+또 다른 라이브러리를 추가하고 싶지는 않기 때문에 리엑트 라이브러리에 대해 추가로 공부할 필요는 없습니다.
+그러나 위에서 언급한 라이브러리는 React와 함께 매우 일반적으로 사용됩니다.
 */
 
 /* 
-A reducer defined how your state is your going to change according to an action (=order) which was "dispatched" (=sent) by your component
-It return the new state of your component/app
+Reducer는 구성 요소가 "전송된 순서에 따라 상태가 어떻게 변경되는지를 정의합니다.
+구성 요소/앱의 새 상태를 반환합니다.
  */
 
 const reducer = (state, action) => {
@@ -77,8 +76,8 @@ const reducer = (state, action) => {
 
 const useSelectExtras = ({ sizeSelected, milkSelected, toppings }) => {
   /* 
-  useReducer return the state he manages and a "dispatch" method which allows to send an action (=order)
-  it takes as arguments a reducer defined above and the initial state of your component
+  useReducer가 관리하는 상태와 순서를 보낼 수 있는 "수정" 메소드를 반환합니다.
+  위에서 정의한 환원기와 구성 요소의 초기 상태를 인수로 사용합니다.
   */
   const [state, dispatch] = useReducer(reducer, {
     sizeSelected: sizeSelected || 'Small',
@@ -87,8 +86,8 @@ const useSelectExtras = ({ sizeSelected, milkSelected, toppings }) => {
   });
 
   /* 
-  Here I defined methods used by MenuShowScreen component
-  The methods dispatch (=sent) an action (=order) and payload (=parameters) to the reducer so it modifies the state of the component
+  여기서 MenuShowScreen 구성요소에서 사용되는 메소드를 정의했습니다.
+  메소드는 구성 요소의 상태를 수정하도록 작업(=오더)과 페이로드(=매개 변수)를 Reducer로 dispatch(=전송)합니다.
   */
   const onSizeSelected = (size) =>
     dispatch({ type: 'sizeChanged', payload: size });
@@ -117,7 +116,7 @@ const useSelectExtras = ({ sizeSelected, milkSelected, toppings }) => {
       payload: topping,
     });
 
-  /* here is what this custom hook return to the component */
+  /* 이 사용자 커스텀 훅 구성요소로 되돌아가는 내용입니다.*/
   return {
     ...state,
     onSizeSelected,

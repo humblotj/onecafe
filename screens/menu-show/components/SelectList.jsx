@@ -13,7 +13,7 @@ import AlertModal from '../../../components/AlertModal';
 import { getTotalPrice, menuList } from '../../../utils/utils';
 
 const useOnSave = (name, size, milk, toppings) => {
-  /* get the setFavourite from the provider of your parent */
+  /* 부모요소의 공급자로부터 setFavorite를 가져옵니다.*/
   const { setFavourite } = useContext(FavouriteContext);
   const navigation = useNavigation();
   const [alertModalVisible, setAlertModalVisible] = useState(false);

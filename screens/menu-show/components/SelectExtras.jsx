@@ -8,8 +8,8 @@ import SquareButton from '../../../components/SquareButton';
 import MilkChip from './MilkChip';
 
 /* 
-Same toppings and milk for all products you can differentiate 
-by product by putting a different toppingsList and milkList in the menuList 
+모든 각각의 제품에 동일한 토핑과 우유를 선택할 수 있도록 설정
+제품별로 다른 토핑리스트와 우유리스트를 메인리스트에 올립니다.
 */
 export const toppingsList = {
   Sugar: { price: 0.1 },
@@ -20,12 +20,12 @@ export const toppingsList = {
 
 const milksList = ['Farm', 'Cocunut', 'Almond', 'Gluten Free'];
 
-/* Component return the title */
+/* 구성 요소가 제목을 반환합니다.*/
 const ExtraTitle = ({ children }) => (
   <Bold style={styles.extraTitle}>{children}</Bold>
 );
 
-/* Component return minus or plus button */
+/* 구성요소가 '플러스','마이너스' 버튼을 반환합니다. */
 const MinusPlusButton = ({ children, active, onPress }) => (
   <SquareButton
     size="small"
@@ -45,7 +45,7 @@ MinusPlusButton.propTypes = {
   onPress: PropTypes.func.isRequired,
 };
 
-/* Main component of this file */
+/* 파일의 메인 구성요소 */
 const SelectExtras = ({
   milkSelected,
   onMilkChange,
@@ -80,9 +80,8 @@ const SelectExtras = ({
       <View>
         <ExtraTitle>Topping</ExtraTitle>
         {/* 
-        equivalent to a loop through the toppingList keys 
-        for each key of toppingsList (here a key is the name of toppings)
-        return the topping component according to the price of the topping
+        각각의 토핑리스트의 키(여기서 키는 토핑의 이름입니다.)와 동일한 루프를 거칩니다.
+        토핑 가격에 따라 토핑의 구성요소를 반환합니다.
         */}
         {Object.entries(toppingsList).map(([name, { price }]) =>
           getTopping({ name, price }, toppings[name]),

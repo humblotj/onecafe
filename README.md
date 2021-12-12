@@ -4,29 +4,35 @@ Cafe menu favourite app
 Demo project for studying purpose
 Documention of the project inside docs/how to use.txt
 
-Getting Started
+카페 메뉴 즐겨찾기 앱
+공부 목적의 데모 프로젝트
+문서/사용 방법에 대한 프로젝트 docs/how to use.txt
 
-Prerequisites:
-This project use eslint to help coding. Eslint is a tool to quickly find problems in your code.
-If not already install, install Eslint VSCode extenstion
+시작하기
+
+필수 조건:
+이 프로젝트는 에슬린트를 사용하여 코딩을 돕습니다. Eslint는 코드의 문제를 빠르게 찾을 수 있는 도구입니다.
+아직 설치하지 않은 경우 Eslint VSCode Extension을 설치합니다.
 ![eslint](https://github.com/humblotj/onecafe/blob/master/docs/readme/eslint.png?raw=true)
-Go to vs code settings and search for "Format on save"
+
+VS 코드를 세팅하고 "Format on save"를 찾아주세요.
 ![formatOnSave](https://github.com/humblotj/onecafe/blob/master/docs/readme/formatOnSave.png?raw=true)
 
-Installation:
+설치법:
+
 npm install --global expo-cli
 
-npm install or yarn install in the root foolder
+npm install or yarn install (루트 폴더)
 
-npm run start or yarn start to run a local server
+npm run start or yarn start (로컬 서버)
 
-This is project uses Expo React Native, you can run this app in your personal phone (you need to share the same wifi for iphone) via qr code
+이 프로젝트는 엑스포 리액트 네이티브를 사용하는 프로젝트로, 당신은 QR코드를 통해 이 앱을 모바일 폰에서 실행할 수 있습니다.
 
-You can still run on android simulator after you install android studio
-npm run android or yarn android to run a local server and launch on android
+안드로이드 스튜디오를 설치한 후에도 안드로이드 시뮬레이터에서 실행할 수 있습니다.
+로컬서버나 안드로이드에서 실행할 때 npm run android or yarn android 를 입력하세요.
 
-Run on iphone simulator after you install xcode
-npm run ios or yarn ios to run a local server and launch on ios
+xcode를 설치한 후 iPhone 시뮬레이터에서 실행
+npm은 ios 또는 yarn ios를 실행하여 로컬 서버를 실행하고 ios에서 시작합니다.
 
-Run directy on web if you dont have any phone...
+모바일 폰이 없으면 웹에서 바로 실행하세요.
 npm run web or yarn web

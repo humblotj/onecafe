@@ -6,7 +6,7 @@ import TouchableRipple from './TouchableRipple';
 import AppText from './AppText';
 
 /*
-SquareButton with different size (large or small)
+크기가 다른 SquareButton 을 정의합니다.
  */
 
 const SquareButton = ({ size, children, style, textStyle, ...rest }) => {
@@ -45,12 +45,12 @@ const styles = StyleSheet.create({
 });
 
 SquareButton.propTypes = {
-  size: PropTypes.string /* size of your button: large or small */,
-  active: PropTypes.bool /* active or not, change the color */,
+  size: PropTypes.string /* 버튼의 크기 */,
+  active: PropTypes.bool /* 활성 여부에 관계없이 색상을 변경합니다.*/,
   textStyle: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.array,
-  ]) /* custom styles of your text */,
+  ]) /* 텍스트의 사용자 스타일을 정의합니다. */,
 };
 SquareButton.defaultProps = {
   size: 'large',
