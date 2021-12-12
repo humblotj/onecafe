@@ -1,9 +1,9 @@
 import React from 'react';
 import { FlatList, StyleSheet } from 'react-native';
 
-import { menuList } from '../../../utils/utils';
-import Container from '../../../components/Container';
-import Bold from '../../../components/Bold';
+import { menuList } from '../../utils/utils';
+import Container from '../../components/Container';
+import Bold from '../../components/Bold';
 import MenuItem from './components/MenuItem';
 
 /* 
@@ -11,7 +11,7 @@ Menu screen
 There is several ways to renders list of item in react native
 The most commons one are:
 The classic way with map ES6 operator: menuList.map((menu) => <MenuItem {...}/>) like you can in the web React
-Or with the Flatlist component, ideal for long list because it is virtual list doesnt render all your items at once...
+Or with the Flatlist component, ideal for long list because it is a virtual list and doesn't render all your items at once...
 Use map for small predetermined list
 Use Flatlist for long dynamic list
 Here I use Flatlist because in the future they might be more items... But now there is only 4, so no performance difference...

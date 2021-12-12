@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
-import { menuList } from '../../../utils/utils';
-import Bold from '../../../components/Bold';
-import Container from '../../../components/Container';
+import { menuList } from '../../utils/utils';
+import Bold from '../../components/Bold';
+import Container from '../../components/Container';
 import ImageCrop from './components/ImageCrop';
 import SelectExtras from './components/SelectExtras';
 import SelectList from './components/SelectList';
@@ -15,7 +15,7 @@ Menu details screen
 */
 
 const MenuShowScreen = ({ route }) => {
-  /* get the name of the product your passed by via the params navigator
+  /* get the name of the product your passed, via the params navigator
   think of menu/latte   -  menu/matcha  for web urls
   */
   const { name } = route.params || {};
@@ -40,6 +40,9 @@ const MenuShowScreen = ({ route }) => {
     onToppingDecrease,
     onToppingDelete,
   } = useSelectExtras({
+    /* get the edit params from your route params
+    if no params no selection at the beginning
+     */
     sizeSelected: route.params?.size,
     milkSelected: route.params?.milk,
     toppings: route.params?.toppings,

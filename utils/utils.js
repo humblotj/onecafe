@@ -1,4 +1,4 @@
-import { toppingsList } from '../screens/Customer/menu-show/components/SelectExtras';
+import { toppingsList } from '../screens/menu-show/components/SelectExtras';
 
 /* utils methods/variables to use in differents components */
 

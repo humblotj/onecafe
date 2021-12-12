@@ -1,27 +1,25 @@
 import React, { useContext, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { useNavigation } from '@react-navigation/core';
 
-import Container from '../../../components/Container';
-import AlertModal from '../../../components/AlertModal';
-import Bold from '../../../components/Bold';
-import Button from '../../../components/Button';
-import FavouriteContext from '../../../context/FavouriteContext';
-import { getTotalPrice } from '../../../utils/utils';
-import AppText from '../../../components/AppText';
+import Container from '../../components/Container';
+import AlertModal from '../../components/AlertModal';
+import Bold from '../../components/Bold';
+import Button from '../../components/Button';
+import FavouriteContext from '../../context/FavouriteContext';
+import { getTotalPrice } from '../../utils/utils';
+import AppText from '../../components/AppText';
 
 /* Home Screen */
 
-const CustomerHomeScreen = () => {
-  /* If get the favourite of your parent provider by using useContext hook */
+const CustomerHomeScreen = ({ navigation }) => {
+  /* Get the favourite of your parent provider by using useContext hook */
   const { favourite } = useContext(FavouriteContext);
-  const navigation = useNavigation();
 
   const [alertModalVisible, setAlertModalVisible] = useState(false);
 
   const onOrder = () => setAlertModalVisible(true);
 
-  /* If no favourite the component return 'You don't have favourite yet' */
+  /* If no favourite, the component return 'You don't have favourite yet' */
   if (!favourite) {
     return (
       <Container>
@@ -42,7 +40,7 @@ const CustomerHomeScreen = () => {
      It is like go to menu/menu-show in web
   */
   const onEdit = () =>
-    navigation.push('Menu', { screen: 'MenuShow', params: favourite });
+    navigation.jumpTo('Menu', { screen: 'MenuShow', params: favourite });
 
   return (
     <Container>

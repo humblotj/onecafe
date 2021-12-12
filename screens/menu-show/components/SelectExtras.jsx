@@ -2,9 +2,9 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
-import AppText from '../../../../components/AppText';
-import Bold from '../../../../components/Bold';
-import SquareButton from '../../../../components/SquareButton';
+import AppText from '../../../components/AppText';
+import Bold from '../../../components/Bold';
+import SquareButton from '../../../components/SquareButton';
 import MilkChip from './MilkChip';
 
 /* 

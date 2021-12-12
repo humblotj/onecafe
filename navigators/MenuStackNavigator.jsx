@@ -1,8 +1,8 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import MenuScreen from '../screens/Customer/menu/MenuScreen';
-import MenuShowScreen from '../screens/Customer/menu-show/MenuShowScreen';
+import MenuScreen from '../screens/menu/MenuScreen';
+import MenuShowScreen from '../screens/menu-show/MenuShowScreen';
 import ScreenHeader from '../components/ScreenHeader';
 
 /*
@@ -32,16 +32,8 @@ const MenuStackNavigator = () => {
         header: () => getHeader(route),
       })}
     >
-      <Stack.Screen
-        name="MenuMain"
-        component={MenuScreen}
-        options={{ unmountOnBlur: true }}
-      />
-      <Stack.Screen
-        name="MenuShow"
-        component={MenuShowScreen}
-        options={{ unmountOnBlur: true }}
-      />
+      <Stack.Screen name="MenuMain" component={MenuScreen} />
+      <Stack.Screen name="MenuShow" component={MenuShowScreen} />
     </Stack.Navigator>
   );
 };

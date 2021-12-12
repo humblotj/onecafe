@@ -24,7 +24,6 @@ module.exports = {
     ],
     'no-unused-vars': 1,
     'react/forbid-prop-types': 0,
-    'import/no-unresolved': 0,
     'import/prefer-default-export': 0,
     'no-shadow': 0,
     'no-plusplus': 0,

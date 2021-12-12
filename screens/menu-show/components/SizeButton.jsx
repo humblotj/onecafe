@@ -2,8 +2,8 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 
-import SquareButton from '../../../../components/SquareButton';
-import Bold from '../../../../components/Bold';
+import SquareButton from '../../../components/SquareButton';
+import Bold from '../../../components/Bold';
 
 /* 
 Size button component reusable

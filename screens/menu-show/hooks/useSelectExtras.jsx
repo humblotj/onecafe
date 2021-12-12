@@ -88,7 +88,7 @@ const useSelectExtras = ({ sizeSelected, milkSelected, toppings }) => {
 
   /* 
   Here I defined methods used by MenuShowScreen component
-  The methods dispatch (=sent) an action (=order) to the reducer so it modify the state of the component
+  The methods dispatch (=sent) an action (=order) and payload (=parameters) to the reducer so it modifies the state of the component
   */
   const onSizeSelected = (size) =>
     dispatch({ type: 'sizeChanged', payload: size });

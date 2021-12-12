@@ -2,8 +2,8 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
-import AppText from '../../../../components/AppText';
-import TouchableRipple from '../../../../components/TouchableRipple';
+import AppText from '../../../components/AppText';
+import TouchableRipple from '../../../components/TouchableRipple';
 
 /* 
 Milk touchable component

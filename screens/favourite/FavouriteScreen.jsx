@@ -1,23 +1,24 @@
 import React, { Fragment, useContext, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import AppText from '../../../components/AppText';
-import Bold from '../../../components/Bold';
-import Button from '../../../components/Button';
-import Container from '../../../components/Container';
-import AlertModal from '../../../components/AlertModal';
-import FavouriteContext from '../../../context/FavouriteContext';
+import AppText from '../../components/AppText';
+import Bold from '../../components/Bold';
+import Button from '../../components/Button';
+import Container from '../../components/Container';
+import AlertModal from '../../components/AlertModal';
+import FavouriteContext from '../../context/FavouriteContext';
 import { toppingsList } from '../menu-show/components/SelectExtras';
-import { getTotalPrice, menuList } from '../../../utils/utils';
+import { getTotalPrice, menuList } from '../../utils/utils';
 
 const FavouriteScreen = () => {
+  /* Get the favourite of your parent provider by using useContext hook */
   const { favourite } = useContext(FavouriteContext);
 
   const [alertModalVisible, setAlertModalVisible] = useState(false);
 
   const onOrder = () => setAlertModalVisible(true);
 
-  /* If no favourite the component return 'You don't have favourite yet' */
+  /* If no favourite, the component return 'You don't have favourite yet' */
   if (!favourite) {
     return (
       <Container>
@@ -33,9 +34,9 @@ const FavouriteScreen = () => {
   /* 
   Function that return the milk line of this screen
 
-  Pro tip: You don't want your components to return to many lines or have to many depths (indentations)...
+  Pro tip: You don't want your components to return too many lines or have too many depths (indentations)...
   Keep your components small to make them readable
-  Here I separate the component I group into multiple functions block
+  Here I separate the component into multiple block function
   Each function has one and only one purpose
   That is one of the core concept of functional programming and why people like it because it is readable if you follow the guideline
   */

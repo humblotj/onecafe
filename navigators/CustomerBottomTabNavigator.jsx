@@ -4,8 +4,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import AppText from '../components/AppText';
 import TouchableRipple from '../components/TouchableRipple';
-import CustomerHomeScreen from '../screens/Customer/customer-home/CustomerHomeScreen';
-import FavouriteScreen from '../screens/Customer/favourite/FavouriteScreen';
+import CustomerHomeScreen from '../screens/customer-home/CustomerHomeScreen';
+import FavouriteScreen from '../screens/favourite/FavouriteScreen';
 import MenuStackNavigator from './MenuStackNavigator';
 import ScreenHeader from '../components/ScreenHeader';
 import HomeIcon from '../components/icons/HomeIcon';
@@ -67,6 +67,7 @@ const CustomerBottomTabNavigator = () => {
 
   return (
     <Tab.Navigator
+      // default screen options for all your screen you override them for a specific screen via the options parameters of your screen
       screenOptions={({ route }) => ({
         header: () => getHeader(route),
         tabBarIcon: ({ focused }) => getTabBarIcon({ focused, route }),
@@ -75,29 +76,18 @@ const CustomerBottomTabNavigator = () => {
         tabBarButton: getTabBarButton,
         tabBarLabel: ({ focused, color }) =>
           getTabBarLabel({ focused, color, route }),
-      })}
-    >
-      <Tab.Screen
-        name="Home"
-        component={CustomerHomeScreen}
         /*
-        In a mobile app, whenever you visit a screen, it doesn't dissapear, it just in the running in the background
+        In a mobile app, whenever you visit a screen of bottom tab, it doesn't dissapear, it just in the running in the background
         Which is good if you want to go back to a previous a screen and keep for example the scroll position or the state of your screen
         But it is really bad performance wise because your stacks keeps accumulating
         You can disabled this behavior for a screen by setting unmountOnBlur=true
         */
-        options={{ unmountOnBlur: true }}
-      />
-      <Tab.Screen
-        name="Favourite"
-        component={FavouriteScreen}
-        options={{ unmountOnBlur: true }}
-      />
-      <Tab.Screen
-        name="Menu"
-        component={MenuStackNavigator}
-        options={{ unmountOnBlur: true }}
-      />
+        unmountOnBlur: true,
+      })}
+    >
+      <Tab.Screen name="Home" component={CustomerHomeScreen} />
+      <Tab.Screen name="Favourite" component={FavouriteScreen} />
+      <Tab.Screen name="Menu" component={MenuStackNavigator} />
     </Tab.Navigator>
   );
 };

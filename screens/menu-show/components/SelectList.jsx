@@ -1,16 +1,16 @@
 import React, { Fragment, useContext, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { useNavigation } from '@react-navigation/core';
 import PropTypes from 'prop-types';
 
-import Bold from '../../../../components/Bold';
-import AppText from '../../../../components/AppText';
+import Bold from '../../../components/Bold';
+import AppText from '../../../components/AppText';
 import { toppingsList } from './SelectExtras';
-import CloseButton from '../../../../components/CloseButton';
-import Button from '../../../../components/Button';
-import FavouriteContext from '../../../../context/FavouriteContext';
-import { useNavigation } from '@react-navigation/core';
-import AlertModal from '../../../../components/AlertModal';
-import { getTotalPrice, menuList } from '../../../../utils/utils';
+import CloseButton from '../../../components/CloseButton';
+import Button from '../../../components/Button';
+import FavouriteContext from '../../../context/FavouriteContext';
+import AlertModal from '../../../components/AlertModal';
+import { getTotalPrice, menuList } from '../../../utils/utils';
 
 const useOnSave = (name, size, milk, toppings) => {
   /* get the setFavourite from the provider of your parent */
@@ -23,7 +23,10 @@ const useOnSave = (name, size, milk, toppings) => {
     setAlertModalVisible(true);
   };
 
-  const onRequestClose = () => navigation.push('Favourite');
+  const onRequestClose = () => {
+    setAlertModalVisible(false);
+    navigation.jumpTo('Favourite');
+  };
 
   return { onSave, alertModalVisible, onRequestClose };
 };

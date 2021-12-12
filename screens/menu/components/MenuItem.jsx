@@ -3,8 +3,8 @@ import { Image, StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/core';
 import PropTypes from 'prop-types';
 
-import TouchableRipple from '../../../../components/TouchableRipple';
-import AppText from '../../../../components/AppText';
+import TouchableRipple from '../../../components/TouchableRipple';
+import AppText from '../../../components/AppText';
 
 /* 
 Return a menu item
@@ -14,6 +14,7 @@ Navigate to menu show on item pressed
 const MenuItem = ({ name, picture }) => {
   const navigation = useNavigation();
 
+  /* go to menushow, pass the name of the item as params */
   const navigateToItem = () => navigation.push('MenuShow', { name });
 
   return (
