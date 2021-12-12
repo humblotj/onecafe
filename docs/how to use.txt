@@ -1,0 +1,67 @@
+This project is based on Expo React native
+
+There will be some Pro tip in the project... You can read them but if you don't understand it is fine... 
+Pro tip are not necessary for starting coding and make your app working, it will just make you code better
+You can try to understand them a few months (or year) later..
+
+# ES6 reminders
+
+React native is based on javascript
+I use a lot of javascript es6 operators (latest javascript syntax) in this project to write complex code with just a few lines
+
+You need to know:
+
+map array operator -->  transform an array to another array
+
+ternary operator --- eg: bool ? valA : valB  equivalent to if(bool) {valA} else {valB}
+
+&& operator --- eg: a && b   equivalent to if(a) {do b}
+
+spread operator -->  {...obj}  equivalent to everything inside obj
+
+# React
+React native is based on React
+It is helps to know React web before learning React Native
+
+Core concept of React 
+Functionnal component vs Class component
+Class component is the old preferred way to code react, you need to learn it if you want to work on old project
+Functionnal component is the new preferred way to code react, you need to learn it if you want to work on new project
+Why functionnal component is preferred over class component??
+Because it is there is easier to understand functionnal component if you wrote the correctly!
+Core concept of functionnal programming "1 FUNCTION 1 PURPOSE" so "1 COMPONENT 1 PURPOSE"
+In that way each function is independant to each others, no side effects or a few so easier to test also
+
+# Virtual DOM
+Ideally, you need to understand how react render you app... 
+Actually react rebuild constantly your app (whenever your state change or an event you are listenning like click or typping happened)... 
+But it is done fast thanks to the Virtual DOM...
+If your understand the Virtual DOM, you understand that all your component are keep re-creating themself and all previous value are lost except the state of your component you saved
+PRO TIP: check memoization concept
+
+
+# React native vs React
+Mobile react native developement is like react web developement but with limited options compare to web
+In web, you use html/css but in react native you use native component and stylesheet which are similar to html/css syntax but are more limited
+For example: in React native there is only 2 main tags "View" for container which are flexblox and "Text" which are inline for your text
+In React native there is less styles rules, no hover, no after, only flexbox, no aria, etc...
+
+# Expo vs Bare React Native
+Expo is built on top of React Native to make things easier (it is easier to add dependencies and deployment for example)
+But expo is more limited than Bare React Native so not used in big project
+
+# How to understand this project
+App.js is the index file of this project it return the customer bottom tab navigator
+All navigators of the app is inside the navigators folders
+A navigator is used to define the route of your app
+
+Common UI components are inside components folder
+
+Your assets are inside assets folder
+
+
+Each screens of your app has one folder inside the screens folder
+Some big screen folder has their own component folder
+
+
+Try to understand easy screen and the components folder first
