@@ -36,3 +36,5 @@ npm은 ios 또는 yarn ios를 실행하여 로컬 서버를 실행하고 ios에�
 
 모바일 폰이 없으면 웹에서 바로 실행하세요.
 npm run web or yarn web
+
+확인용
